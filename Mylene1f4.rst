@@ -1,3 +1,9 @@
+=========
+Mylene1f4
+=========
+
+:Date: November 2026
+
 NAME
 ====
 
@@ -31,7 +37,7 @@ user-oriented program (see **-!**).
 **Mylene1f4** readily plays standard MPEG audio files (such as MP3s) and
 system-embedded MPEG audio streams (such as MPEG A/V containers) out of
 the box. **Mylene1f4** can also play 1f42 files, which are stream maps
-designed to address the shortcomings of plain MPEG streamsâwhere stream
+designed to address the shortcomings of plain MPEG streamsâ€”where stream
 duration cannot be known in advance and time-based seeks on large files
 can be slow. Created with **mapmaudio**\ (1), 1f42 files supply
 frame-level index metadata and can either embed the audio stream
@@ -48,20 +54,18 @@ Play a single file in non-interactive mode:
 Play an album with detailed stream coding information and real-time
 playback position updates (**-px1f4**):
 
-   **Mylene1f4 -px1f4 Anamorphosee/\*.mp3**
+   **Mylene1f4 -px1f4 Anamorphosee/*.mp3**
 
 Start **Mylene1f4** in interactive server mode listening on a UNIX
 domain socket:
 
-   **Mylene1f4 Interstellaires/\*.mp3 Desobeissance/\*.mp3 --unix-server
+   **Mylene1f4 Interstellaires/*.mp3 Desobeissance/*.mp3 --unix-server
    /tmp/.Mylene1f4**
 
 Seek to 2 minutes into the currently playing track or skip to the next
 track using **Mylene3e8**\ (1):
 
    **Mylene3e8 /tmp/.Mylene1f4 seek 2:0**
-
-..
 
    **Mylene3e8 /tmp/.Mylene1f4 skip**
 
@@ -171,7 +175,7 @@ OPTIONS
    Set the playback start stream time to *HOURS* \* 3600 + *MINUTES* \*
    60 + *SECONDS* + *FRAMES* / 60 seconds. No whitespace is allowed
    before or after the **:** and **,** separators. Fields are not
-   restricted to the 0â59 range.
+   restricted to the 0â€“59 range.
 
 **-f**, **--start-frame** *CARDINAL*
    Skip the specified number of audio frames at the beginning of each
@@ -225,8 +229,6 @@ OPTIONS
       where *PROGRESS* concatenates:
 
          **%G(%z(%A(A%:2:A\\0)%a(a%:2:a\\0)%c(c%:2:c\\0)))**
-
-      ..
 
          **%G(%z(%g(g%:2:g\\0)%t(t%:2:t\\0)%y(y%:2:y\\0)))**
 
@@ -381,7 +383,7 @@ OPTIONS
    Set the ID3v2 parser timeout to *CARDINAL* microseconds (the maximum
    time **Mylene1f4** waits for the ID3v2 parser to complete). If 0 is
    specified, the default is used. *CARDINAL* is not restricted to the
-   1â1000000 range.
+   1â€“1000000 range.
 
 **--id3v2-transfer** *CARDINAL*
    Set the maximum ID3v2 parser transfer size to *CARDINAL* bytes (the
@@ -405,17 +407,17 @@ OPTIONS
 
 **--layer3-amplification** *REAL*
    Set MPEG Layer III audio stream amplification to *REAL*. *REAL* is
-   expected to be in the -20â20 range.
+   expected to be in the -20â€“20 range.
 
 **--layer3-frequencies** *LIST*
    Set MPEG Layer III equalizer band frequencies to *LIST*, a
-   comma-separated list of frequency values in the 20â20000 range. The
+   comma-separated list of frequency values in the 20â€“20000 range. The
    default frequencies are 32, 64, 128, 256, 512, 1024, 2048, 4096,
    8192, and 16384.
 
 **--layer3-levels** *LIST*
    Set MPEG Layer III equalizer band levels to *LIST*, a comma-separated
-   list of level values in the -20â20 range. The number of band levels
+   list of level values in the -20â€“20 range. The number of band levels
    must match the number of equalizer band frequencies.
 
 **--list-b-operators**
@@ -622,15 +624,15 @@ OPTIONS
 **--version**
    Print version information to standard output and exit.
 
-All file selection filter criteriaâboth the simple filters
+All file selection filter criteriaâ€”both the simple filters
 (**-A**/**--album**, **-B**/**--basename**, **-P**/**--path**,
 **-a**/**--artist**, **-c**/**--comment**, and **-t**/**--title**) and
-the complex filter (**-F**/**--filter**)âare enforced when loading
+the complex filter (**-F**/**--filter**)â€”are enforced when loading
 files. A file must satisfy every active filter criterion to be loaded.
 
 Simple filter criteria perform case-sensitive wildcard matching using
 shell patterns (**\*** and **?**). A **\*** matches any sequence of
-characters, whereas an empty pattern (ââ) matches only files where the
+characters, whereas an empty pattern (â€˜â€™) matches only files where the
 corresponding property exists and is empty. Note that file properties
 are trimmed of leading and trailing whitespace before matching.
 
@@ -730,10 +732,10 @@ See **express17**\ (1) for additional mathematical and string functions.
 Use **--list-functions** to obtain the complete list of functions
 available in complex filters.
 
-Most C prefix unary and infix binary operators are supportedâincluding
+Most C prefix unary and infix binary operators are supportedâ€”including
 unary **!**, **+**, **-**, and **~**, and binary **\***, **/**, **%**,
 **+**, **-**, **<<**, **>>**, **<**, **>**, **!=**, **==**, **&**,
-**^**, **\|**, **&&**, and **\|\|**âwith semantics and precedence
+**^**, **\|**, **&&**, and **\|\|**â€”with semantics and precedence
 matching or closely following their C counterparts.
 
 Among the additional binary operators:
@@ -852,8 +854,6 @@ statement_line: ;
 
    \| **do** **{** *break_block* **}** **while** **(** *expression*
    **)** **;**
-
-..
 
    \| **if** **(** *expression* **)** **{** *block* **}**
    *elif_block_list* *else_block*
@@ -1199,7 +1199,7 @@ Pseudo-effector functions include:
    Suspends execution of the running execution-queue program and
    reinserts it into the execution queue before the program at *index*.
    If *index* is negative, the program is reinserted before the element
-   at index (*queue_length* + 1 + *index*)âso *0* places it first, *1*
+   at index (*queue_length* + 1 + *index*)â€”so *0* places it first, *1*
    places it second, *-1* places it last, *-2* places it second to last,
    and so on. If *index* is less than -(*queue_length* + 1) or greater
    than *queue_length*, this function has no effect.
@@ -1306,7 +1306,7 @@ order is loaded (without filtering), and program execution resumes
 before playback starts. At this point, functions such as **artist**\ ()
 and **title**\ () refer to the newly loaded file. If the next effector
 call is **E_down**\ (), **E_loop**\ (), or **E_play**\ (), the loaded
-file is played immediatelyâas if the effector had been called before the
+file is played immediatelyâ€”as if the effector had been called before the
 previous file was unloaded and the loaded file satisfied the filter
 criteria. Other effector calls behave normally (for instance, a
 subsequent **E_load**\ () skips the loaded file), and if no further
@@ -1449,7 +1449,7 @@ The interpreted \`\\' escapes are:
    Vertical tab.
 
 \\\\
-   A literal backslash (\`\\').
+   A literal backslash (`\\').
 
 The interpreted directives are:
 
@@ -2309,7 +2309,7 @@ After the **%**, the following modifiers may appear in sequence:
    minimum field width. The padding is applied by repeating the string
    as many times as necessary.
 
-[+\|-]...width
+[+|-]...width
    A decimal digit string preceded by zero or more **+** (plus) or **-**
    (minus) signs specifying a minimum field width.
 
@@ -2337,8 +2337,6 @@ headers). It concatenates:
 
    **"%b"**
 
-..
-
    **"%x( \\(%l(%<0>2H:%<0>2M:%<0>2S:%<0>2F), %7F frames\\))\\n"**
 
 which prints the basename of the file, followed by the 1f42 map stream
@@ -2350,8 +2348,6 @@ which prints the artist and title if an ID3 tag was read; and
 
    **"%v(%m(%S, layer %3l))"**
 
-..
-
    **"%v(%m(, %3B kbits/s, %:2:5s Hz, %14m, %M\\n))"**
 
 which prints MPEG audio stream details.
@@ -2360,7 +2356,7 @@ List all files in the playlist along with their current index:
 
    **"%l(%f(%6c\\t%N\\n))"**
 
-List a subset of files (indices 48â63 and 80â95), showing both their
+List a subset of files (indices 48â€“63 and 80â€“95), showing both their
 current and initial indices along with artist and title:
 
    **"%l(%{48-63,80-95}f(%-5c%-5i%t(%-30a%-30t)\\n))"**
